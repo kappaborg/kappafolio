@@ -1,5 +1,3 @@
-const withPWA = require('next-pwa');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,6 +7,12 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
   },
   webpack: (config, { isServer }) => {
     // SVG configuration
@@ -41,9 +45,8 @@ const nextConfig = {
   },
 };
 
-module.exports = withPWA({
+const withPWA = require('next-pwa')({
   dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development'
-})(nextConfig); 
+});
+
+module.exports = withPWA(nextConfig); 

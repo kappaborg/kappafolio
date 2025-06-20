@@ -1176,3 +1176,27 @@ body {
     );
   }
 }
+
+.bg-grid {
+  background-image: url('/grid.svg');
+}
+
+.bg-gradient-radial {
+    transition: background 0.8s ease-in-out;
+}
+
+[data-theme="God Eye"] .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, rgba(52, 152, 219, 0.1), transparent 60%);
+}
+
+[data-theme="Quantum Lab"] .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, rgba(142, 68, 173, 0.1), transparent 60%);
+}
+
+[data-theme="Bosnia Learner"] .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, rgba(241, 196, 15, 0.1), transparent 60%);
+}
+
+[data-theme="default"] .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, rgba(234, 88, 12, 0.05), transparent 70%);
+}

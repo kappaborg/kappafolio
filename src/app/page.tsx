@@ -1,5 +1,6 @@
 'use client';
 
+import { useTheme } from '@/context/ThemeContext';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
@@ -25,8 +26,13 @@ const CustomCursor = dynamic(() => import('@/components/CustomCursor'), {
 });
 
 export default function Home() {
+  const { activeTheme } = useTheme();
+
   return (
-    <main className="min-h-screen relative overflow-hidden bg-[#0a0a0a]">
+    <main 
+      className="min-h-screen relative overflow-hidden bg-[#0a0a0a]"
+      data-theme={activeTheme}
+    >
       <CustomCursor />
       
       {/* Animated background grid */}

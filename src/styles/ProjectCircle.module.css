@@ -124,4 +124,21 @@
     transform: scale(0.7);
     top: 20%;
   }
+}
+
+@keyframes rotate-infinite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-container-rotate {
+  animation: rotate-infinite 250s linear infinite;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 } 
